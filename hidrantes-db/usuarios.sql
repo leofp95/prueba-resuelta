@@ -72,15 +72,15 @@ END;
 INSERT INTO usuarios(cedula, nombre, apellido_1, apellido_2, telefono, tipo, contrasena)
 VALUES
 -- Admin
-(111111110, 'Alejandro', 'Sanchez', 'Barboza', 11111111, 0, 'admin'),
+(111111110, 'Alejandro', 'Sanchez', 'Barboza', 11111111, 0, 'admin123'),
 -- Bomberos
-(111111111, 'Juan', 'Perez', 'Lopez', 11111111, 1, ''),
-(111111112, 'Carlos', 'Campos', 'Cerdas', 11111111, 1, ''),
-(111111113, 'Pedro', 'Flores', 'Sanchez', 11111111, 1, ''),
-(111111114, 'Maria', 'Chaves', 'Zamora', 11111111, 1, ''),
-(111111115, 'Julieta', 'Gutierrez', 'Montero', 11111111, 1, ''),
+(111111111, 'Juan', 'Perez', 'Lopez', 11111111, 1, '11111111'),
+(111111112, 'Carlos', 'Campos', 'Cerdas', 11111111, 1, '11111112'),
+(111111113, 'Pedro', 'Flores', 'Sanchez', 11111111, 1, '11111113'),
+(111111114, 'Maria', 'Chaves', 'Zamora', 11111111, 1, '11111114'),
+(111111115, 'Julieta', 'Gutierrez', 'Montero', 11111111, 1, '11111115'),
 -- Municipalidad
-(111111116, 'Margarita', 'Lee', 'Torres', 11111111, 2, ''),
-(111111117, 'Rosa', 'Baltodano', 'Cerdas', 11111111, 2, ''),
-(111111118, 'Julian', 'Torres', 'Nice', 11111111, 2, '')
+(111111116, 'Margarita', 'Lee', 'Torres', 11111111, 2, '11111116'),
+(111111117, 'Rosa', 'Baltodano', 'Cerdas', 11111111, 2, '11111117'),
+(111111118, 'Julian', 'Torres', 'Nice', 11111111, 2, '11111118');
 

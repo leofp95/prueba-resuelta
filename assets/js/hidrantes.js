@@ -29,9 +29,8 @@ $(document).ready(function($) {
 	$("#map div canvas").click(function(e){
 		var localizacion = $("#location div").html();
 		$("#locationCopied p span").html(localizacion);
-		//$("#locationCopied").fadeOut("fast");
 		$('#locationCopied').css({'top':e.pageY-50,'left':e.pageX, 'position':'absolute'});
-		$("#locationCopied").fadeIn("fast");
+		$("#locationCopied").stop(true, true).show().fadeOut(5000);
 		$(".form-group.localizacion input.localizacion").attr("value", localizacion);
 	});
 	$( "select.hidrante" ).change(function() {

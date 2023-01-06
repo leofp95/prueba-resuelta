@@ -2,10 +2,11 @@
     <div class="map_container">
       
       <div id="map"></div>
-      <div id="locationCopied">
-        <p>Localizacion Copiada: <span></span></p>
+      <div id="locationCopied" style="display:none">
+        <p>Localización Copiada: <span></span></p>
       </div>
-      <div id="wrapper" style="display:none">
+      <div id="wrapper">
+        <div class="mb-4 backbutton"><a class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">Volver</a></div>
         <div id="location" class="mb-4"></div>
         <div id="scale" class="mb-4"></div>
       </div>
@@ -41,13 +42,13 @@
               <div class="form-group">
                 <input type="text" class="form-control pb_height-50 reverse" placeholder="Caudal" name="caudal" value="<?php echo $hidrantes[0]['caudal'] ?>">
               </div>
-              <label>Localizacion</label>
+              <label>Localización</label>
               <div class="form-group ver_mapa" container="nueva_inspeccion">
                   <a>Ver Mapa</a>
               </div>
               <div class="form-group localizacion" style="display:block !important;">
-                <label for="bombero">Dirijase al mapa y haga click sobre la ubicacion del nuevo hidrante para copiarla</label>
-                <input type="text" class="form-control pb_height-50 reverse" placeholder="Localizacion" name="localizacion" value="<?php echo $hidrantes[0]['geom'] ?>" readonly>
+                <label for="localizacion">Diríjase al mapa y haga click sobre la ubicación del nuevo hidrante para copiarla</label>
+                <input type="text" class="form-control pb_height-50 reverse localizacion" placeholder="Localizacion" name="localizacion" value="<?php echo $hidrantes[0]['localizacion'] ?>" readonly>
               </div>
               <div class="form-group">
                 <input type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">

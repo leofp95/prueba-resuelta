@@ -44,7 +44,7 @@ class Usuarios_model extends CI_Model {
         $in_telefono = $this->input->post('telefono');
         $in_tipo = $this->input->post('tipo');
         
-        return $this->db->query("select usuario_crear($in_cedula, '$in_nombre', '$in_apellido_1', '$in_apellido_2', $in_telefono, $in_tipo);");
+        return $this->db->query("call usuario_crear($in_cedula, '$in_nombre', '$in_apellido_1', '$in_apellido_2', $in_telefono, $in_tipo);");
     }
 
     public function delete_usuarios(){
@@ -53,7 +53,7 @@ class Usuarios_model extends CI_Model {
             return $this->db->delete('usuarios', $data);
             */
             $in_cedula = $this->input->get('cedula');
-            return $this->db->query("select usuario_eliminar($in_cedula);");
+            return $this->db->query("call usuario_eliminar($in_cedula);");
         
     }
 
@@ -67,7 +67,7 @@ class Usuarios_model extends CI_Model {
         $in_telefono = $this->input->post('telefono');
         $in_tipo = $this->input->post('tipo');
         
-        return $this->db->query("select usuario_modificar($in_cedula, '$in_nombre', '$in_apellido_1', '$in_apellido_2', $in_telefono, $in_tipo);");
+        return $this->db->query("call usuario_modificar($in_cedula, '$in_nombre', '$in_apellido_1', '$in_apellido_2', $in_telefono, $in_tipo);");
     }
 
     public function get_bomberos(){

@@ -24,12 +24,12 @@ class Hidrantes_model extends CI_Model {
         $in_caudal = $this->input->post('caudal');
         $in_localizacion = $this->input->post('localizacion');
         
-        return $this->db->query("select hidrantes_crear($in_nombre, '$in_calle', '$in_avenida', '$in_caudal', $in_localizacion);");
+        return $this->db->query("call hidrantes_crear($in_nombre, '$in_calle', '$in_avenida', '$in_caudal', $in_localizacion);");
     }
 
     public function delete_hidrantes(){
             $in_id = $this->input->get('id');
-            return $this->db->query("select hidrantes_eliminar($in_id);");
+            return $this->db->query("call hidrantes_eliminar($in_id);");
         
     }
 
@@ -48,15 +48,13 @@ class Hidrantes_model extends CI_Model {
             $latitud = trim($coordenadas[0]);
             $longitud = trim($coordenadas[1]);
 
-            return $this->db->query("select hidrantes_modificar_latlon($in_id, '$in_nombre', $in_calle, $in_avenida, $in_caudal, $latitud, $longitud);");
+            return $this->db->query("call hidrantes_modificar_latlon($in_id, '$in_nombre', $in_calle, $in_avenida, $in_caudal, $latitud, $longitud);");
         }
         else{
-            return $this->db->query("select hidrantes_modificar($in_id, '$in_nombre', $in_calle, $in_avenida, $in_caudal, '$in_localizacion');");
+            return $this->db->query("call hidrantes_modificar($in_id, '$in_nombre', $in_calle, $in_avenida, $in_caudal, '$in_localizacion');");
         }
     }
     public function get_hidrantes_nombre($nombre){
-
-        $in_id = $this->input->get('nombre');
         return $this->db->query("call hidrantes_obtener_nombre('$nombre');")->result_array();
     }
 }

@@ -21,12 +21,12 @@ class Solicitudes_model extends CI_Model {
         $in_inspeccion = $this->input->post('inspeccion');
         $in_estado = $this->input->post('estado');
         
-        return $this->db->query("select solicitudes_crear($in_inspeccion, $in_estado);");
+        return $this->db->query("call solicitudes_crear($in_inspeccion, $in_estado);");
     }
 
     public function delete_solicitudes(){
             $in_id = $this->input->get('id');
-            return $this->db->query("select solicitudes_eliminar($in_id);");
+            return $this->db->query("call solicitudes_eliminar($in_id);");
         
     }
 
@@ -36,6 +36,6 @@ class Solicitudes_model extends CI_Model {
         $in_id = $this->input->get('id');
         $in_estado = $this->input->post('estado');
         
-        return $this->db->query("select solicitudes_modificar($in_id, $in_estado);");
+        return $this->db->query("call solicitudes_modificar($in_id, $in_estado);");
     }
 }

@@ -28,19 +28,30 @@
             </form>
 
           </div>
-            <div class="sub-heading" id="search-hidrante">
-              <?php 
-                if(isset($hidrantes)){
-                  foreach ($hidrantes as $hidrante): ?>
-									<p>Detalles del hidrante</p>
-                  <p>Id: <?php echo $hidrante['id'] ?></p>
-                  <p>Nombre: <?php echo $hidrante['nombre'] ?></p>
-                  <p>Calle: <?php echo $hidrante['calle'] ?></p>
-                  <p>Avenida: <?php echo $hidrante['avenida'] ?></p>
-                  <p>Caudal: <?php echo $hidrante['caudal'] ?></p>
-                  <?php endforeach; 
-                }
-              ?>
+            <div class="box_container" id="search-hidrante">
+              <?php if(isset($hidrantes)){ ?>
+                <table class="table">
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Calle</th>
+                    <th scope="col">Avenida</th>
+                    <th scope="col">Caudal</th>
+                    <th scope="col">Localización</th>
+                  </tr>
+
+                  <?php foreach ($hidrantes as $hidrante): ?>
+                    <tr>
+                      <td><?php echo $hidrante['id'] ?></td>
+                      <td><?php echo $hidrante['nombre'] ?>
+                      <td><?php echo $hidrante['calle'] ?></td>
+                      <td><?php echo $hidrante['avenida'] ?></td>
+                      <td><?php echo $hidrante['caudal'] ?></td>
+                      <td><?php echo $hidrante['localizacion'] ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </table> 
+              <?php } ?>
             </div>
           </div>
           <div class="col-md-1">

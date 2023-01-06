@@ -3,7 +3,7 @@ CREATE TABLE inspecciones(
     bombero int REFERENCES usuarios(id),
     hidrante int REFERENCES hidrantes(id),
     hidrante_nuevo varchar(30),
-    completo bool DEFAULT false,
+    completo boolean DEFAULT false,
     accion int DEFAULT 0, -- Pendiente = 0, Instalacion = 1, Mantenimiento = 2, Ninguna = 3
     fecha_solicitud date not null,
     fecha_finalizacion date default null
@@ -43,7 +43,6 @@ END;
 DELIMITER //
 CREATE PROCEDURE inspecciones_obtener_id (in_id int)
 BEGIN
-  RETURN QUERY
   SELECT i.id, i.bombero, i.hidrante, i.completo, i.accion, i.fecha_solicitud, i.fecha_finalizacion 
   FROM inspecciones i
   WHERE i.id = in_id;

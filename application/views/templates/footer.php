@@ -99,16 +99,15 @@
                 });
                 map.getView().fit(bounds, map.getSize());
                 map.on('singleclick', function(evt) {
-                        document.getElementById('nodelist').innerHTML = "Loading... please wait...";
-                        var view = map.getView();
-                        var viewResolution = view.getResolution();
-                        var source = untiled.get('visible') ? untiled.getSource() : tiled.getSource();
-                        var url = source.getGetFeatureInfoUrl(
-                        evt.coordinate, viewResolution, view.getProjection(),
-                        {'INFO_FORMAT': 'text/html', 'FEATURE_COUNT': 50});
-                        if (url) {
-                        document.getElementById('nodelist').innerHTML = '<iframe seamless src="' + url + '"></iframe>';
-                        }
+                        //document.getElementById('nodelist').innerHTML = "Loading... please wait...";
+                        // var view = map.getView();
+                        // var viewResolution = view.getResolution();
+                        // var url = tiled.getSource().getGetFeatureInfoUrl(
+                        // evt.coordinate, viewResolution, view.getProjection(),
+                        // {'INFO_FORMAT': 'text/html', 'FEATURE_COUNT': 50});
+                        //if (url) {
+                        //document.getElementById('nodelist').innerHTML = '<iframe seamless src="' + url + '"></iframe>';
+                        //}
                 });
 
                 // sets the chosen WMS version
@@ -125,15 +124,15 @@
                 }
 
                 // Tiling mode, can be 'tiled' or 'untiled'
-                function setTileMode(tilingMode) {
-                        if (tilingMode == 'tiled') {
-                        untiled.set('visible', false);
-                        tiled.set('visible', true);
-                        } else {
-                        tiled.set('visible', false);
-                        untiled.set('visible', true);
-                        }
-                }
+                // function setTileMode(tilingMode) {
+                //         if (tilingMode == 'tiled') {
+                //         untiled.set('visible', false);
+                //         tiled.set('visible', true);
+                //         } else {
+                //         tiled.set('visible', false);
+                //         untiled.set('visible', true);
+                //         }
+                // }
 
                 function setAntialiasMode(mode) {
                         map.getLayers().forEach(function(lyr) {

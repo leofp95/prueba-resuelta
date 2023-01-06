@@ -31,22 +31,24 @@
                   <th scope="col">Avenida</th>
                   <th scope="col">Caudal</th>
 									<th scope="col">Localización</th>
+                  <?php if($this->session->tipo == 0 || $this->session->tipo == 2){ ?>
+                    <th scope="col" colspan="2">Acciones</th>
+                  <?php } ?>
                 </tr>
 
                 <?php foreach ($hidrantes as $hidrante): ?>
-                        <tr>
-                          <td><?php echo $hidrante['id'] ?></td>
-                          <td><?php echo $hidrante['nombre'] ?>
-                          <td><?php echo $hidrante['calle'] ?></td>
-                          <td><?php echo $hidrante['avenida'] ?></td>
-                          <td><?php echo $hidrante['caudal'] ?></td>
-                          <td><?php echo $hidrante['volumen'] ?></td>
-                          <td><?php echo $hidrante['distancia'] ?></td>
-                          <?php if($this->session->tipo == 0 || $this->session->tipo == 2){ ?>
-                            <td><a href="<?php echo base_url(); ?>hidrantes/update?id=<?php echo $hidrante['id'] ?>" class="modificar">Modificar</a></td>
-                            <td><a href="<?php echo base_url(); ?>hidrantes/delete?id=<?php echo $hidrante['id'] ?>" class="eliminar">Eliminar</a></td>
-                          <?php } ?>
-                        </tr>
+                  <tr>
+                    <td><?php echo $hidrante['id'] ?></td>
+                    <td><?php echo $hidrante['nombre'] ?>
+                    <td><?php echo $hidrante['calle'] ?></td>
+                    <td><?php echo $hidrante['avenida'] ?></td>
+                    <td><?php echo $hidrante['caudal'] ?></td>
+                    <td><?php echo $hidrante['localizacion'] ?></td>
+                    <?php if($this->session->tipo == 0 || $this->session->tipo == 2){ ?>
+                      <td><a href="<?php echo base_url(); ?>hidrantes/update?id=<?php echo $hidrante['id'] ?>" class="modificar">Modificar</a></td>
+                      <td><a href="<?php echo base_url(); ?>hidrantes/delete?id=<?php echo $hidrante['id'] ?>" class="eliminar">Eliminar</a></td>
+                    <?php } ?>
+                  </tr>
                 <?php endforeach; ?>
               </table>
             </div>

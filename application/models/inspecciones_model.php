@@ -21,7 +21,7 @@ class Inspecciones_model extends CI_Model {
         $in_bombero = $this->input->post('bombero');
         $in_hidrante = $this->input->post('hidrante');
         
-        return $this->db->query("select inspecciones_crear($in_bombero, $in_hidrante);");
+        return $this->db->query("call inspecciones_crear($in_bombero, $in_hidrante);");
     }
 
     public function create_inspecciones_localizacion(){
@@ -35,12 +35,12 @@ class Inspecciones_model extends CI_Model {
             $latitud = trim($coordenadas[0]);
             $longitud = trim($coordenadas[1]);
         
-        return $this->db->query("select inspecciones_crear_latlon($in_bombero, '$in_hidrante_nuevo', $latitud, $longitud);");
+        return $this->db->query("call inspecciones_crear_latlon($in_bombero, '$in_hidrante_nuevo', $latitud, $longitud);");
     }
 
     public function delete_inspecciones(){
             $in_id = $this->input->get('id');
-            return $this->db->query("select inspecciones_eliminar($in_id);");
+            return $this->db->query("call inspecciones_eliminar($in_id);");
         
     }
 
@@ -60,6 +60,6 @@ class Inspecciones_model extends CI_Model {
             $in_hidrante = 0;
         }
         
-        return $this->db->query("select inspecciones_modificar($in_id, $in_bombero, $in_hidrante, $in_accion);");
+        return $this->db->query("call inspecciones_modificar($in_id, $in_bombero, $in_hidrante, $in_accion);");
     }
 }

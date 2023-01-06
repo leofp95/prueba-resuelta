@@ -780,6 +780,7 @@ abstract class CI_DB_driver {
 	 */
 	public function simple_query($sql)
 	{
+		$this->close();
 		if ( ! $this->conn_id)
 		{
 			if ( ! $this->initialize())

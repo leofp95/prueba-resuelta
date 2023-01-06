@@ -13,7 +13,7 @@
           <div class="col-md-12">
             <h2 class="heading mb-12">Hidrante Actualizado</h2>
             <div class="sub-heading">
-              <p class="mb-12">El hidrante se actualizo satisfactoriamente.</p>
+              <p class="mb-12">El hidrante se actualizó satisfactoriamente.</p>
               <p class="mb-12">
                 <a class="btn btn-success btn-lg pb_btn-pill smoothscroll" href="<?php echo base_url(); ?>hidrantes">
                   <span class="pb_font-14 text-uppercase pb_letter-spacing-1">Volver</span>
